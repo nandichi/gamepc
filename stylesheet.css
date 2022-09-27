@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    width: auto;
+    margin: auto;
+}
+  header {
+      background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("/images/wallpaper2k.png");
+      height: 100vh;
+      -webkit-background-size: cover;
+      background-size: cover;
+      position: relative;
+  }
+
+.nav-area{
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+}
+.nav-area li{
+    display: inline-block
+}
+.nav-area li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family:Courier;
+    font-size: 14px;
+  }
+.nav-area li a:hover{
+    background: #ffffff;
+    color: #333;
+}
+.welcome {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+.welcome h1 {
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.welcome p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+.loginform {
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: #fff;
+}
+
+.loginform h1 {
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 0;
+}
+
+.loginform p {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.loginform input {
+    font-size: 16px;
+    width: 100%;
+    padding: 15px 10px;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+}
+
+.loginform button {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+    width: 50%;
+    border-radius: 5px;
+}
+
