@@ -6,7 +6,7 @@ include '../private/connection.php';
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$sql = 'SELECT role,URID FROM users WHERE username= :username AND password = :password';
+$sql = 'SELECT role,username FROM users WHERE username= :username AND password = :password';
 
 $query = $conn->prepare($sql);
 $query->bindParam(':username', $username);
@@ -22,7 +22,7 @@ if ($query->rowCount() == 1 ) {
         header('location: ../index.php?page=adminwelkom');
     } elseif ($result['role'] == "klant") {
         $_SESSION['ingelogd1'] = true;
-        $_SESSION['URID'] = $result['URID'];
+        $_SESSION['URID'] = $result['username'];
         header('location: ../index.php?page=welkom');
     } else {        $_SESSION['ingelogd1'] = true;
         $_SESSION['URID'] = $result['URID'];

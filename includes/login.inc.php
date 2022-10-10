@@ -13,5 +13,8 @@
         <p>wachtwoord</p>
         <input type="password" name="password" placeholder="Wachtwoord" required/>
         <button type="submit">Login</button>
+        <button onclick="window.location.href='index.php?page=registreer';">
+            registreer
+        </button>
     </form>
 </div>
