@@ -12,8 +12,8 @@
         <input type="password" name="password" placeholder="password" required minlength="5">
         <button type="submit">Register</button>
         <form>
-            <label for="role">role:</label>
-            <select id="role" name="role">
+            <label for="role" hidden>role:</label>
+            <select id="role" name="role" hidden>
                 <option value="klant">klant</option>
             </select>
         </form>

@@ -13,7 +13,7 @@
         }
 
         if (isset($_SESSION['ingelogd'])) {
-            echo '<li><a href="index.php?page=ADMIN">admin</a></li>';
+            echo '<li><a href="index.php?page=adminwelkom">admin</a></li>';
         }
 
         elseif (isset($_SESSION['ingelogd1'])) {
