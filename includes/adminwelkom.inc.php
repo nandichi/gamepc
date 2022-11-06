@@ -8,6 +8,13 @@ $sth = $conn->prepare($sql);
 $sth->execute();
 $res = $sth->fetchAll();
 
+$sql = "SELECT DISTINCT type FROM parts";
+
+$sth = $conn->prepare($sql);
+$sth->execute();
+$types = $sth->fetchAll();
+
+
 ?>
 
 <body>
@@ -15,15 +22,20 @@ $res = $sth->fetchAll();
     <form action="../php/aanpassen.php" method="post">
         <div class="dropdown">
             <label class="text-primary">Product Naam</label><br>
-            <input type="text" name="naam">
+            <input type="text" name="naam"required>
             <br>
-
-            <label class="text-primary">Type</label><br>
-            <input type="text" name="type">
+            <select name="type" class="btn btn-primary dropdown-toggle">
+                <option>Selecteer type</option>'
+                <?php
+                foreach ($types as $row) {
+                    echo ' <option value="'.$row['type'] .'"> ' .$row["type"]. '</option>';
+                }
+                ?>
+            </select>
             <br>
 
             <label class="text-primary">Prijs</label><br>
-            <input type="text"name="prijs">
+            <input type="text"name="price" required>
             <br>
                 <select name="resultaat" class="btn btn-primary dropdown-toggle">
                     <option>Selecteer product</option>'
@@ -34,9 +46,7 @@ $res = $sth->fetchAll();
                     ?>
                 </select>
             </div>
-        <input type="text" placeholder="price" name="price">
         <button id="add-button" name="update" class="button">update</button>
     </form>
 </div>
-
 </body>

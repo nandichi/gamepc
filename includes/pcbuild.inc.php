@@ -95,7 +95,7 @@ $ssd->execute();
             ?>
         </select>
 
-        <input class="submitbuild" type="submit" name="submit" value="Submit"/>
+        <input class="submitbuild" type="submit" name="submit" value="Voeg toe aan winkelwagen"/>
     </form>
     <?php
     if (isset($_POST['submit'])) {
@@ -104,11 +104,12 @@ $ssd->execute();
         $parts = $conn->prepare("SELECT price FROM parts WHERE id IN ({$ids})");
         $parts->execute();
         $price = 0;
+        $conn->beginTransaction();
+
         while ($part = $parts->fetch(PDO::FETCH_ASSOC)) {
             $price += $part['price'];
         };
         echo "<h1 style='color: white'>" . $price . "</h1>";
-
     }
     ?>
 </div>

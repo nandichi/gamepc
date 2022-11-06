@@ -1,7 +1,9 @@
 <?php
+
 include '../private/connection.php';
 
 function renewData($id){
+    global $conn;
     $stmt = $conn->prepare("SELECT * FROM parts WHERE id = :id");
     $stmt->bindParam(":id",$id);
     $stmt->execute();
