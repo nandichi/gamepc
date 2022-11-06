@@ -7,7 +7,7 @@
     margin: auto;
 }
   header {
-      background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("/images/wallpaper2k.png");
+      background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("/images/wallpaper2k.jpg");
       height: 100vh;
       -webkit-background-size: cover;
       background-size: cover;
@@ -126,4 +126,9 @@ button {
     background: transparent;
     color: #fff;
     cursor: pointer;
+}
+
+.btn-primary {
+    align-items:  flex-end;
+    color: black;
 }
