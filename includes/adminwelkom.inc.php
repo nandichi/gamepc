@@ -3,37 +3,40 @@
 include 'private/connection.php';
 
 $sql = "SELECT * FROM parts";
-$result = $conn->query($sql);
 
-echo'<table style="color: white">';
-echo '<tr>';
-echo "<th>id</th>";
-echo "<th>naam</th>";
-echo "<th>prijs</th>";
-echo '</tr>';
-
-if ($result->rowCount() > 0){
-    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-        echo '<tr">';
-        echo '<td>'. $row["id"];'</td>';
-        echo '<td>'. $row["naam"];'</td>';
-        echo '<td>'. $row["price"];'</td>';
-        echo '</tr>';
-    }
-} else {
-    echo '<td> "0 results"</td>';
-}
-echo'</table>';
-$dbh = null;
+$sth = $conn->prepare($sql);
+$sth->execute();
+$res = $sth->fetchAll();
 
 ?>
 
+<body>
 <div class="container">
     <form action="../php/aanpassen.php" method="post">
-        <input type="text" placeholder="id" name="id" required>
-        <input type="text" placeholder="naam" name="naam" required>
-        <input type="text" placeholder="type" name="type" hidden>
-        <input type="text" placeholder="price" name="price" required>
+        <div class="dropdown">
+            <label class="text-primary">Product Naam</label><br>
+            <input type="text" name="naam">
+            <br>
+
+            <label class="text-primary">Type</label><br>
+            <input type="text" name="type">
+            <br>
+
+            <label class="text-primary">Prijs</label><br>
+            <input type="text"name="prijs">
+            <br>
+                <select name="resultaat" class="btn btn-primary dropdown-toggle">
+                    <option>Selecteer product</option>'
+                    <?php
+                    foreach ($res as $row) {
+                        echo ' <option value="'.$row['id'] .'"> ' .$row["naam"]. '</option>';
+                    }
+                    ?>
+                </select>
+            </div>
+        <input type="text" placeholder="price" name="price">
         <button id="add-button" name="update" class="button">update</button>
     </form>
 </div>
+
+</body>
