@@ -132,3 +132,60 @@ button {
     align-items:  flex-end;
     color: black;
 }
+
+.submitbutton{
+    background: blue;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 50px;
+    width: 100px;
+    font: bold15px arial,sans-serif;
+    text-shadow: none;
+}
+
+.pcbuildwel{
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+.pcbuildwel h1 {
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.pcbuildwel p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+.welcome{
+
+}
+
+.list-group{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: black;
+}
+
+.checkout{
+    width: 100%;
+    position: absolute;
+    top: 15%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white
+}
+
+.labels{
+
+}

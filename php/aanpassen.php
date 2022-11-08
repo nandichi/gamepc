@@ -38,7 +38,6 @@ if (geldigBody());
 
         foreach($opties as $k => $v){
             if($v > 1){
-                // Meer dan 1 char in input
                 if($k == $naam){
                     $stmt = $conn->prepare("UPDATE parts SET `naam` = :naam, `type` = :type, `price` = :price  WHERE `id` = :id");
                     $stmt->bindParam(':id', $id, PDO::PARAM_STR);
@@ -83,13 +82,6 @@ if (geldigBody());
                 $data = renewData($id);
             }
         }
-
-
-
-
-
-
-
 }
 
 header('location: ../index.php?page=adminwelkom');
