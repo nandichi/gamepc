@@ -18,10 +18,10 @@ $types = $sth->fetchAll();
 ?>
 
 <body>
-<div class="container">
+<div class="welcome">
     <form action="../php/aanpassen.php" method="post">
         <div class="dropdown">
-            <label class="text-primary">Product Naam</label><br>
+            <label class="labels">Product Naam</label><br>
             <input type="text" name="naam"required>
             <br>
             <select name="type" class="btn btn-primary dropdown-toggle">
@@ -34,7 +34,7 @@ $types = $sth->fetchAll();
             </select>
             <br>
 
-            <label class="text-primary">Prijs</label><br>
+            <label class="labels">Prijs</label><br>
             <input type="text"name="price" required>
             <br>
                 <select name="resultaat" class="btn btn-primary dropdown-toggle">
