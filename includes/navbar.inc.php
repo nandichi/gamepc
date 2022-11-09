@@ -1,13 +1,13 @@
 <div class="wrapper">
     <ul class="nav-area">
         <li><a href=index.php?page=homepage>home</a> </li>
-        <li><a href=index.php?page=cart>winkelmandje</a> </li>
-        <li><a href=index.php?page=registreer>registreer</a> </li>
+        <li><a href=index.php?page=registreer>register</a> </li>
 
 
         <?php
         if (in_array("username", $_SESSION)) {
             echo "<li><a href=index.php?page=pcbuild>pcbuild</a> </li>";
+            echo "<li><a href=index.php?page=cart>cart</a> </li>";
             echo "<li><a href=index.php?page=logout>logout</a> </li>";
 
         } else {

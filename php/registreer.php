@@ -11,7 +11,8 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $role = $_POST['role'];
 
-$password = password_hash($password, PASSWORD_DEFAULT);
+//password_hash($password, PASSWORD_DEFAULT);
+
 
 $stmt = $conn->prepare("INSERT INTO users (voornaam,achternaam,woonplaats,straat,huisnummer,postcode,username,password,role) values(:voornaam, :achternaam, :woonplaats, :straat, :huisnummer,:postcode,:username,:password,:role)");
 
@@ -24,6 +25,8 @@ $stmt->bindParam(':postcode' , $postcode);
 $stmt->bindParam(':username' , $username);
 $stmt->bindParam(':password' , $password);
 $stmt->bindParam(':role' , $role);
+
+
 
 
 $stmt->execute();

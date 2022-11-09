@@ -26,6 +26,7 @@ if (isset($_POST['submit'])) {
 
     $conn->exec("INSERT INTO cart (username, build_id) VALUES ('{$username}', {$build_id[0]})");
     $conn->commit();
-    header('location: ../index.php?page=cart');
+    header('location: ../index.php?page=pcbuild');
+
 }
 ?>

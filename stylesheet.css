@@ -147,7 +147,7 @@ button {
 .pcbuildwel{
     width: 100%;
     position: absolute;
-    top: 20%;
+    top: 10%;
     transform: translateY(-50%);
     text-align: center;
     color: #fff;
